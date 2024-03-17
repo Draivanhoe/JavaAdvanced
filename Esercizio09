@@ -1,0 +1,38 @@
+// TRACCIA ORIGINALE
+// Scrivere una funzione che restituisca un hashset riempito
+// Creare un oggeto dello stesso tipo inserito nell'HashSet e popolarlo
+// Scorrere il set, per ogni elemento verificare se è uguale all'oggetto creato ed eliminarlo
+// Svuotare l'hashset, verificarlo e stampare il risultato
+
+// TRACCIA MODIFICATA
+// Create la struttura, la popolate e poi implementate una ricerca nel set a partire da un valore di input,
+// se lo trovate allora lo togliete dal set. Fate in modo di trovare tutti i valori con cui avete popolato il set
+// in modo che rimanga vuoto. A quel punto stampate il set per vedere che sia effettivamente vuoto.
+
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create la struttura
+        HashSet<String> listaDellaSpesa = creaUnHashSet();
+
+        // poi implementate una ricerca nel set a partire da un valore di input, se lo trovate allora lo togliete dal
+        // set a partire da un valore di input.
+        // Fate in modo di trovare tutti i valori con cui avete popolato il set in modo che rimanga vuoto.
+        listaDellaSpesa.remove("Pomodori");
+        listaDellaSpesa.remove("Olive");
+        listaDellaSpesa.remove("Patate");
+
+        // A quel punto stampate il set per vedere che sia effettivamente vuoto.
+        System.out.println(listaDellaSpesa);
+    }
+
+    // Create la struttura, la popolate
+    public static HashSet<String> creaUnHashSet() {
+        HashSet<String> unHashSet = new HashSet<String>();
+        unHashSet.add("Pomodori");
+        unHashSet.add("Olive");
+        unHashSet.add("Patate");
+        return unHashSet;
+    }
+}
