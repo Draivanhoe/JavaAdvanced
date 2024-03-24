@@ -1,0 +1,38 @@
+// Creare una classe Student che accenti nel costruttore il parametro name (String) e age (Int)
+// In questa classe avere i metodi pubblici per ottenere le informazioni.
+// Creare un ArrayList con n elementi e stamparlo in console.
+// Aggiungere 4 elementi alla collezione e stampare la collezione aggiornata in console
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student("Aldo", 10);
+        Student student2 = new Student("Bart", 11);
+        Student student3 = new Student("Cesare", 12);
+
+        // Creare un ArrayList con n elementi e stamparlo in console.
+
+        ArrayList<Student> studentList = new ArrayList<>(Arrays.asList(student1, student2, student3));
+        System.out.println("Lista originale:");
+        stampaListaStudenti(studentList);
+
+        // Aggiungere 4 elementi alla collezione e stampare la collezione aggiornata in console
+
+        Student student4 = new Student("David", 13);
+        Student student5 = new Student("Edoardo", 14);
+
+        studentList.add(student4);
+        studentList.add(student5);
+
+        System.out.println("Lista aggiornata:");
+        stampaListaStudenti(studentList);
+    }
+
+    public static void stampaListaStudenti(ArrayList<Student> studentList) {
+        for (Student studente : studentList) {
+            System.out.println(studente.getNome() + ", " + studente.getAge());
+        }
+    }
+}
