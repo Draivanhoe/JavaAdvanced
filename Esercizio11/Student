@@ -1,0 +1,29 @@
+// Creare una classe Student che accetti nel costruttore il parametro name (String) e age (Int)
+
+public class Student {
+    protected String nome;
+    protected int age;
+
+    public Student(String nome, int age) {
+        this.nome = nome;
+        this.age = age;
+    }
+
+    // In questa classe avere i metodi pubblici per ottenere le informazioni.
+
+    public java.lang.String getNome() {
+        return nome;
+    }
+
+    public void setNome(java.lang.String nome) {
+        this.nome = nome;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
