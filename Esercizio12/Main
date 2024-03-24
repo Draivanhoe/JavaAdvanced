@@ -1,0 +1,40 @@
+// Creare una classe Fruit che accenti nel costruttore il parametro name (String)
+// In questa classe avere i metodi pubblici per ottenere le informazioni.
+// Creare un LinkedList con elementi e stamparlo in console.
+// Aggiungere un elemento al primo posto della lista e uno all'ultimo
+// Stampare la collezione aggiornata
+
+import java.util.Arrays;
+import java.util.LinkedList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creare un LinkedList con elementi e stamparlo in console.
+
+        Fruit frutto1 = new Fruit("albicocca");
+        Fruit frutto2 = new Fruit("banana");
+        Fruit frutto3 = new Fruit("ciliegia");
+
+        LinkedList<Fruit> mangiatelaTutta = new LinkedList<>(Arrays.asList(frutto1, frutto2, frutto3));
+        System.out.println("Lista originale:");
+        stampaFrutta(mangiatelaTutta);
+
+        // Aggiungere un elemento al primo posto della lista e uno all'ultimo
+
+        Fruit frutto4 = new Fruit("dattero");
+        Fruit frutto5 = new Fruit("eucalipto");
+
+        mangiatelaTutta.addFirst(frutto4);
+        mangiatelaTutta.addLast(frutto5);
+
+        // Stampare la collezione aggiornata
+        System.out.println("Lista aggiornata:");
+        stampaFrutta(mangiatelaTutta);
+    }
+
+    public static void stampaFrutta (LinkedList<Fruit> mangiatelaTutta) {
+        for (Fruit frutto : mangiatelaTutta) {
+            System.out.println(frutto.getName());
+        }
+    }
+}
