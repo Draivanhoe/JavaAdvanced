@@ -1,0 +1,23 @@
+// Crea un oggetto OffsetDateTime da questa stringa 2002-03-01T13:00:00Z
+// Formatta la data ottenuta in FULL, MEDIUM e SHORT
+// Stampa le varie versioni
+
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
+public class Main {
+    public static void main(String[] args) {
+        OffsetDateTime date = OffsetDateTime.parse("2002-03-01T13:00:00Z");
+
+        String shortDate = date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
+        String mediumDate = date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));
+
+        // Qui ho dovuto convertire la data, altrimenti mi avrebbe dato errore a causa dell'assenza della zona.
+        String fullDate = date.toZonedDateTime().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL));
+
+        System.out.println("shortDate: " + shortDate);
+        System.out.println("mediumDate: " + mediumDate);
+        System.out.println("fullDate: " + fullDate);
+    }
+}
