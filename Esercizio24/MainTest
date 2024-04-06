@@ -1,0 +1,20 @@
+import org.junit.jupiter.api.Test;
+import java.time.OffsetDateTime;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class MainTest {
+    Main istanzaTest = new Main();
+
+    @Test
+    void spezzettaData() {
+        OffsetDateTime dataOriginale = OffsetDateTime.parse("2023-03-01T13:00:00Z");
+        OffsetDateTime dataTest = OffsetDateTime.parse("2013-04-02T15:30:00Z");
+
+        String stringaEffettiva = istanzaTest.spezzettaData(dataTest);
+
+        assertTrue(stringaEffettiva.contains("Anno: 2023")
+                && stringaEffettiva.contains("Mese: MARCH (3)")
+                && stringaEffettiva.contains("Giorno della settimana: WEDNESDAY")
+                && stringaEffettiva.contains("Giorno: 1"));
+    }
+}
