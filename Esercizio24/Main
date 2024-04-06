@@ -1,0 +1,31 @@
+// Crea un oggetto data da questa stringa 2023-03-01T13:00:00Z
+// Ottieni l'anno
+// Ottieni il mese
+// Ottieni il giorno
+// Ottieni il giorno della settimana
+// Stampa i risultati sulla console
+// Crea dei test per questo esercizio
+
+import java.time.DayOfWeek;
+import java.time.Month;
+import java.time.OffsetDateTime;
+
+public class Main {
+    public static void main(String[] args) {
+        OffsetDateTime data = OffsetDateTime.parse("2023-03-01T13:00:00Z");
+        System.out.println(spezzettaData(data));
+    }
+
+    public static String spezzettaData (OffsetDateTime dataDaSpezzettare) {
+        int anno = dataDaSpezzettare.getYear();
+        int numeroDelMese = dataDaSpezzettare.getMonthValue();
+        Month nomeDelMese = dataDaSpezzettare.getMonth();
+        int giornoDelMese = dataDaSpezzettare.getDayOfMonth();
+        DayOfWeek giornoDellaSettimana = dataDaSpezzettare.getDayOfWeek();
+
+        return ("Anno: " + anno +
+                "\nMese: " + nomeDelMese + " (" + numeroDelMese + ")" +
+                "\nGiorno: " + giornoDelMese +
+                "\nGiorno della settimana: " + giornoDellaSettimana);
+    }
+}
