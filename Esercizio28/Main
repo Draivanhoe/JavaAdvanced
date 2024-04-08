@@ -1,0 +1,21 @@
+// Crea una classe Person con i campi firstName, lastName, age e address, i getter and i setter
+// Il costruttore accetterà un Builder in input
+// Creare una classe Builder che attraverso il costruttore e dei metodi specifici
+// (tranne nome e cognome, gli altri campi sono opzionali) per costruire l'oggetto Person.
+// Creare due oggetti Person e stamparli a video
+
+public class Main {
+    public static void main(String[] args) {
+        Builder builder = new Builder("Ivan", "Frangipani");
+        builder.setAge(30);
+        builder.setAddress("Via Vai 123");
+        Person persona1 = builder.build();
+
+        builder.setFirstName("Giulio");
+        builder.setAge(25);
+        Person persona2 = builder.build();
+
+        System.out.println("Persona 1: " + persona1.toString());
+        System.out.println("Persona 2: " + persona2.toString());
+    }
+}
